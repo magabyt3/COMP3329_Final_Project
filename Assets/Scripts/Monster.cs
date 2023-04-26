@@ -8,7 +8,13 @@ public class Monster : MonoBehaviour
 {
     [SerializeField] Sprite _deadSprite;
     [SerializeField] ParticleSystem _particleSystem;
+    SpriteRenderer _spriteRenderer;
     bool _hasDied;
+
+    void Awake()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -25,6 +31,11 @@ public class Monster : MonoBehaviour
 
         Bird bird = collision.gameObject.GetComponent<Bird>();
         if (bird != null)
+            return true;
+
+        // New script for balls
+        BirdController bc = collision.gameObject.GetComponent<BirdController>();
+        if (bc != null)
             return true;
 
         // Box falling in from above

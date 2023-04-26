@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
-public class Bird : MonoBehaviour
+public class BirdController : MonoBehaviour
 {
+    [SerializeField] Sprite[] cyberPolices;
     [SerializeField] float _launchForce = 500;
     [SerializeField] float _maxDragDistance = 4;
-    [SerializeField] ParticleSystem _particleSystem;
+
     Vector2 _startPosition;
     Rigidbody2D _rigidBody2D;
     SpriteRenderer _spriteRenderer;
+    public Sprite _currentSprite;
 
     void Awake()
     {
@@ -17,11 +20,17 @@ public class Bird : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
+        _spriteRenderer.sprite = cyberPolices[Random.Range(0, cyberPolices.Length)];
+        _currentSprite = _spriteRenderer.sprite;
         _startPosition = _rigidBody2D.position;
         _rigidBody2D.isKinematic = true;
+    }
+
+    void Update()
+    {
+        transform.Rotate(0, 0, 1.5f);
     }
 
     void OnMouseDown()
@@ -54,39 +63,26 @@ public class Bird : MonoBehaviour
             desiredPosition = _startPosition + (direction * _maxDragDistance);
         }
 
-        // Can't drag bird to the right
+        // Can't drag ball to the right
         if (desiredPosition.x > _startPosition.x)
             desiredPosition.x = _startPosition.x;
 
         _rigidBody2D.position = desiredPosition;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
-        //StartCoroutine(ResetAfterDelay());
-        StartCoroutine(Die());
+        StartCoroutine(ResetAfterDelay());
     }
 
-    /*
     IEnumerator ResetAfterDelay()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4);
+        _spriteRenderer.sprite = cyberPolices[Random.Range(0, cyberPolices.Length)];
+        _currentSprite = _spriteRenderer.sprite;
         _rigidBody2D.position = _startPosition;
         _rigidBody2D.isKinematic = true;
         _rigidBody2D.velocity = Vector2.zero;
     }
-    */
 
-    IEnumerator Die()
-    {
-        _particleSystem.Play();
-        yield return new WaitForSeconds(3);
-        gameObject.SetActive(false);
-    }
 }
