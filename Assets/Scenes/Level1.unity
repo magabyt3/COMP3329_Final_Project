@@ -482,8 +482,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766894223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.72, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalPosition: {x: 0, y: 3.51, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1082,18 +1082,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7105500189762588444, guid: 7f8b1357cb85b46cb86c9c65b7c719ac, type: 3}
       propertyPath: orthographic size
-      value: 5.3437495
+      value: 5.34375
       objectReference: {fileID: 0}
     - target: {fileID: 7105500189762588643, guid: 7f8b1357cb85b46cb86c9c65b7c719ac, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.1199999
       objectReference: {fileID: 0}
+    - target: {fileID: 7105500189762588643, guid: 7f8b1357cb85b46cb86c9c65b7c719ac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7850001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105500189762588643, guid: 7f8b1357cb85b46cb86c9c65b7c719ac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13
+      objectReference: {fileID: 0}
     - target: {fileID: 7105500190049203812, guid: 7f8b1357cb85b46cb86c9c65b7c719ac, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.1199999
       objectReference: {fileID: 0}
+    - target: {fileID: 7105500190049203812, guid: 7f8b1357cb85b46cb86c9c65b7c719ac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7850001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105500190049203812, guid: 7f8b1357cb85b46cb86c9c65b7c719ac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13
+      objectReference: {fileID: 0}
     - target: {fileID: 7105500190746474904, guid: 7f8b1357cb85b46cb86c9c65b7c719ac, type: 3}
       propertyPath: m_Targets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105500190746474904, guid: 7f8b1357cb85b46cb86c9c65b7c719ac, type: 3}
+      propertyPath: m_Targets.Array.data[0].radius
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7105500190746474904, guid: 7f8b1357cb85b46cb86c9c65b7c719ac, type: 3}
