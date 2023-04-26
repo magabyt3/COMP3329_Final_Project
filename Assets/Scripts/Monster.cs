@@ -28,15 +28,28 @@ public class Monster : MonoBehaviour
     {
         if (_hasDied)
             return false;
-
-        Bird bird = collision.gameObject.GetComponent<Bird>();
-        if (bird != null)
-            return true;
+        
 
         // New script for balls
         BirdController bc = collision.gameObject.GetComponent<BirdController>();
+        Monster monster = collision.otherCollider.gameObject.GetComponent<Monster>();
+
         if (bc != null)
-            return true;
+        {
+            if (bc._currentSprite.name == "MalwarePolice" && monster.name.Contains("MonsterBlue"))
+                return true;
+
+            if (bc._currentSprite.name == "VPNPolice" && monster.name.Contains("MonsterGreen"))
+                return true;
+
+            if (bc._currentSprite.name == "TwoFactorAuthPolice" && monster.name.Contains("MonsterOrange"))
+                return true;
+
+            if (bc._currentSprite.name == "SoftwareUpdatePolice" && monster.name.Contains("MonsterPink"))
+                return true;
+
+            return false;
+        }
 
         // Box falling in from above
         if (collision.contacts[0].normal.y < -0.5)
