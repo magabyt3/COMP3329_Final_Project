@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4268818271058982173}
   - component: {fileID: 319543175795616641}
   - component: {fileID: 2253955154860778669}
+  - component: {fileID: 1536700835147517316}
   m_Layer: 0
   m_Name: TriangleGround
   m_TagString: Untagged
@@ -115,3 +116,24 @@ PolygonCollider2D:
       - {x: 10.24, y: -10.24}
       - {x: 10.24, y: -10.12}
       - {x: -10.13, y: 10.24}
+--- !u!50 &1536700835147517316
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4980450974858266584}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
