@@ -30,7 +30,7 @@ public class BirdController : MonoBehaviour
 
     void Update()
     {
-        //transform.Rotate(0, 0, 1f);
+        transform.Rotate(0, 0, 1f);
     }
 
     void OnMouseDown()
