@@ -24,8 +24,24 @@ public class Monster : MonoBehaviour
             return false;
 
         Bird bird = collision.gameObject.GetComponent<Bird>();
+        Monster monster = collision.otherCollider.gameObject.GetComponent<Monster>();
+
         if (bird != null)
-            return true;
+        {
+            if (bird.name == "MalwarePolice" && monster.name.Contains("MonsterBlue"))
+                return true;
+
+            if (bird.name == "VPNPolice" && monster.name.Contains("MonsterGreen"))
+                return true;
+
+            if (bird.name == "TwoFactorAuthPolice" && monster.name.Contains("MonsterOrange"))
+                return true;
+
+            if (bird.name == "SoftwareUpdatePolice" && monster.name.Contains("MonsterPink"))
+                return true;
+
+            return false;
+        }
 
         // Box falling in from above
         if (collision.contacts[0].normal.y < -0.5)
