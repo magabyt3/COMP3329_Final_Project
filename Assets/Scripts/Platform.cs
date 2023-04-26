@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
+    [SerializeField] private GameObject[] cyberPolices;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         collision.transform.SetParent(transform);
