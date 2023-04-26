@@ -30,7 +30,7 @@ public class BirdController : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(0, 0, 1.5f);
+        //transform.Rotate(0, 0, 1f);
     }
 
     void OnMouseDown()
@@ -77,7 +77,7 @@ public class BirdController : MonoBehaviour
 
     IEnumerator ResetAfterDelay()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
         _spriteRenderer.sprite = cyberPolices[Random.Range(0, cyberPolices.Length)];
         _currentSprite = _spriteRenderer.sprite;
         _rigidBody2D.position = _startPosition;
