@@ -42,7 +42,7 @@ public class Monster : MonoBehaviour
             if (bc._currentSprite.name == "VPNPolice" && monster.name.Contains("MonsterGreen"))
                 return true;
 
-            if (bc._currentSprite.name == "TwoFactorAuthPolice" && monster.name.Contains("MonsterOrange"))
+            if (bc._currentSprite.name == "TwoFactAuthPolice" && monster.name.Contains("MonsterOrange"))
                 return true;
 
             if (bc._currentSprite.name == "SoftwareUpdatePolice" && monster.name.Contains("MonsterPink"))
